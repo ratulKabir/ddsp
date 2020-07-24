@@ -1,0 +1,27 @@
+# -*-Python-*-
+import ddsp.training
+
+
+# Evaluate
+evaluate.batch_size = 4
+evaluate.num_batches = 5  # Depends on dataset size.
+
+
+# Sample
+sample.batch_size = 16
+sample.num_batches = 1
+sample.ckpt_delay_secs = 300  # 5 minutes
+
+
+# Dataset
+train.data_provider = @data.SyntheticNotes()
+evaluate.data_provider = @data.SyntheticNotes()
+sample.data_provider = @data.SyntheticNotes()
+
+
+## Create a synthetic dataset with ddsp/training/data_preparation/ddsp_generate_synthetic_data.py
+# Synthetic data generator.
+data.SyntheticNotes.file_pattern = '/path/to/synthetic_dataset.tfrecord*'
+data.SyntheticNotes.n_timesteps = 125
+data.SyntheticNotes.n_harmonics = 100
+data.SyntheticNotes.n_mags = 65

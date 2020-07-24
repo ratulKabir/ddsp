@@ -1,0 +1,11 @@
+# -*-Python-*-
+
+# Configuration for generating a synthetic dataset.
+
+import ddsp
+import ddsp.training
+
+generate_examples.generate_fn = @data_preparation.synthetic_data.generate_notes_v2
+generate_notes_v2.n_timesteps = 125
+generate_notes_v2.n_harmonics = 100
+generate_notes_v2.n_mags = 65

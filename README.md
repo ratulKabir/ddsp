@@ -82,6 +82,17 @@ The DDSP library consists of a [core library](./ddsp) (`ddsp/`) and a [self-cont
 
 Besides the tutorials, each module has its own test file that can be helpful for examples of usage.
 
+<a id='Installation'></a>
+# Installation
+Requires tensorflow version >= 2.1.0, but the core library runs in either eager or graph mode.
+
+```bash
+sudo apt-get install libsndfile-dev
+pip install --upgrade pip
+pip install --upgrade ddsp
+```
+
+
 <a id='Overview'></a>
 # Overview
 
@@ -260,16 +271,6 @@ most functions without worrying about side-effects. One exception is `ddsp.core.
 
 For backwards compatability, we keep track of changes in function signatures in `update_gin_config.py`, which can be used to update old operative configs to work with the current library.
 
-<a id='Installation'></a>
-# Installation
-Requires tensorflow version >= 2.1.0, but the core library runs in either eager or graph mode.
-
-```bash
-sudo apt-get install libsndfile-dev
-pip install --upgrade pip
-pip install --upgrade ddsp
-```
-
 <a id='Contributing'></a>
 # Contributing
 
@@ -291,8 +292,9 @@ If you use this code please cite it as:
   url={https://openreview.net/forum?id=B1x1ma4tDr}
 }
 ```
-
 <a id='Disclaimer'></a>
 # Disclaimer
+
+_Functions and classes marked **EXPERIMENTAL** in their doc string are under active development and very likely to change. They should not be expected to be maintained in their current state._
 
 This is not an official Google product.
